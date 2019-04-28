@@ -1,0 +1,38 @@
+
+.skeleton {
+  display: none;
+}
+
+.shiny-bound-output:empty + .skeleton {
+  display: block;
+}
+
+.shiny-table {
+  width: 100% !important;
+}
+
+.sk-layout {
+    display: flex;
+}
+
+.sk-layout-column {
+    flex-direction: column;
+}
+
+.sk-text-row {
+    height: 2rem;
+    width: 100%;
+    background: #ddd;
+    margin: 0.5rem 0;
+}
+
+.skeleton-item {
+    animation: skeleton-pulse 0.8s linear infinite alternate;
+}
+
+
+@keyframes skeleton-pulse {
+  from { background: #bbb; }
+  to { background: #ddd; }
+}
+
