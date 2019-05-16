@@ -3,4 +3,4 @@ When apps have some longer calculations it is good practice to show the user an 
 
 See it in action [here](https://shiny.epi-interactive.com/loading)
 
-![alt text](www/loading-thumbnail.png)
+![alt text](www/progress-gif.gif)
