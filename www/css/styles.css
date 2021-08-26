@@ -3,8 +3,12 @@
   display: none;
 }
 
-.shiny-bound-output:empty + .skeleton {
+.shiny-bound-output:empty + .skeleton, .shiny-bound-output.recalculating + .skeleton  {
   display: block;
+}
+
+.shiny-bound-output.recalculating{
+  display:none;
 }
 
 .shiny-table {

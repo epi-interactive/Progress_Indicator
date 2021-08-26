@@ -1,13 +1,28 @@
 library(shiny)
-source("global.R")
+
+#Skeleton 
+createTableSkeleton <- function() {
+  div(class="skeleton",
+      div(class="sk-layout sk-layout-column",
+          div(class="sk-text-row skeleton-item"),
+          div(class="sk-text-row skeleton-item"),
+          div(class="sk-text-row skeleton-item"),
+          div(class="sk-text-row skeleton-item"),
+          div(class="sk-text-row skeleton-item"),
+          div(class="sk-text-row skeleton-item"),
+          div(class="sk-text-row skeleton-item"),
+          div(class="sk-text-row skeleton-item")
+      )    
+  )
+}
 
 # Basic UI for app
 ui <- tagList(
   tags$head(
-    tags$link(rel = "stylesheet", type = "text/css", href = "nprogress.css"),
-    tags$link(rel = "stylesheet", type = "text/css", href = "styles.css"),
-    tags$script(src="nprogress.js"),
-    tags$script(src=("main.js"))
+    tags$link(rel = "stylesheet", type = "text/css", href = "css/nprogress.css"),
+    tags$link(rel = "stylesheet", type = "text/css", href = "css/styles.css"),
+    tags$script(src="js/nprogress.js"),
+    tags$script(src=("js/main.js"))
     
   ),
   tags$body(
@@ -29,7 +44,6 @@ ui <- tagList(
 
 # Server for app
 server <- function(input, output) {
-  
   # Simple data for the table - just takes in 
   appData <- reactive({
     req(input$sort, input$gears)
