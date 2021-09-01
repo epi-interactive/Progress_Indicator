@@ -55,3 +55,14 @@ Use `:empty` CSS pseudo to only show the skeleton when your content is loading
   display: block;
 }
 ```
+
+
+
+
+---
+
+Code created by [Epi-interactive](https://www.epi-interactive.com) 
+
+As always, our expert team is here to help if you want custom training, would like to take your dashboards to the next level or just need an urgent fix to keep things running. Just get in touch for a chat.
+
+[https://www.epi-interactive.com/contact](https://www.epi-interactive.com/contact)
