@@ -59,7 +59,13 @@ server <- function(input, output) {
     withGear <- mtcars[mtcars$gear == input$gears, ]
     # Sort by chosen sort type
     sorted <- withGear[order(withGear[[input$sort]]), ]
-      
+    
+    #Cleaning up data for table display
+    sorted$vs <- ifelse(sorted$vs == 0,"V-shaped", "Straight")
+    sorted$am <- ifelse(sorted$am == 0,"Automatic", "Manual")
+    names(sorted) <- c("Miles/(US) gallon", "Number of cylinders", "Displacement (cu.in.)", "Gross horsepower", "Rear axle ratio", "Weight (1000 lbs)", "1/4 mile time", "Engine", "Transmission", "Number of forward gears", "Number of carburetors")
+    
+    return(sorted)  
   })
   
    # Output the table using the data above
