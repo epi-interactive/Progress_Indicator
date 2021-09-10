@@ -33,13 +33,16 @@ ui <- tagList(
   ),
   tags$body(
     fluidPage(
-      titlePanel("Showing progress for complex tasks"),
-      sidebarLayout(
-        sidebarPanel(
-          selectInput("sort", "Sort cars by:", c("Horsepower"="hp", "Miles per gallon"="mpg"), "Horsepower"),
-          selectInput("gears", "Number of gears: ", unique(mtcars$gear), unique(mtcars$gear)[1])
+      div(class="title", h1("Loading and progress")),
+      div(class="app-body",
+        div(class="sidebar",
+            div(
+              selectInput("sort", "Sort cars by:", c("Horsepower"="hp", "Miles per gallon"="mpg"), "Horsepower"),
+              selectInput("gears", "Number of gears: ", unique(mtcars$gear), unique(mtcars$gear)[1])
+            ),
+            tags$img(src="images/Epi_Logo.png", width= "90%")
       ),
-      mainPanel(
+      div(class="main",
          tableOutput("table"),
          createTableSkeleton()
       )
@@ -61,6 +64,10 @@ server <- function(input, output) {
     sorted <- withGear[order(withGear[[input$sort]]), ]
     
     #Cleaning up data for table display
+    sorted$cyl <- as.integer(sorted$cyl)
+    sorted$hp <- as.integer(sorted$hp)
+    sorted$gear <- as.integer(sorted$gear)
+    sorted$carb <- as.integer(sorted$carb)
     sorted$vs <- ifelse(sorted$vs == 0,"V-shaped", "Straight")
     sorted$am <- ifelse(sorted$am == 0,"Automatic", "Manual")
     names(sorted) <- c("Miles/(US) gallon", "Number of cylinders", "Displacement (cu.in.)", "Gross horsepower", "Rear axle ratio", "Weight (1000 lbs)", "1/4 mile time", "Engine", "Transmission", "Number of forward gears", "Number of carburetors")

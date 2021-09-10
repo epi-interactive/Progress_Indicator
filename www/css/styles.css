@@ -40,3 +40,73 @@
   to { background: #ddd; }
 }
 
+
+/*Page styling*/
+.container-fluid {
+  padding:0;
+  height: 100vh;
+}
+
+.title{
+  border-bottom: 2px solid #00ADD8;
+  box-sizing: border-box;
+  padding-left: 50px;
+}
+
+h1{
+      margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.app-body{
+  display:flex;
+  height: calc(100% - 91px);
+  
+}
+
+.main{
+  width: 100%;
+  padding:0 100px;
+}
+
+.sidebar{
+  padding:50px;
+  background-color: #00ADD8;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  height: 100%;    
+}
+
+.sidebar img{
+    margin-top: auto;
+    bottom: 15px;
+    align-self: center;
+    
+}
+
+.main, .sidebar{
+  
+  padding-top: 70px;
+}
+
+.selectize-input, .selectize-dropdown{
+  color:#707070;
+  border: 1px solid #707070;
+}
+
+.selectize-control.single .selectize-input:after {
+    border-color: #707070 transparent transparent transparent;
+}
+
+.selectize-control.single .selectize-input.dropdown-active:after {
+    border-color:transparent transparent #707070 transparent;
+}
+
+.table>thead>tr>th {
+    border-bottom: 2px solid #707070;
+}
+
+.table>tbody>tr>td{
+  border-top: 1px solid #707070;
+}
